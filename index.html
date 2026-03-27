@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shtëpia e Ëmbëlsirave – Pâtisserie Albanaise</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Cinzel:wght@400;600&family=EB+Garamond:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="navbar">
+  <a href="#" class="nav-logo">Shtëpia e Ëmbëlsirave</a>
+  <ul class="nav-links">
+    <li><a href="#douceurs">Douceurs</a></li>
+    <li><a href="#pites">Pites</a></li>
+    <li><a href="#about">Notre histoire</a></li>
+  </ul>
+  <button class="cart-btn" onclick="openCart()">
+    Panier
+    <span class="cart-count" id="cartCount">0</span>
+  </button>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-pattern"></div>
+  <div class="hero-ornament"></div>
+  <div class="hero-content">
+    <p class="hero-subtitle">Pâtisserie Albanaise Authentique</p>
+    <h1 class="hero-title">
+      Shtëpia e<br>Ëmbëlsirave
+      <span>La Maison des Douceurs</span>
+    </h1>
+    <div class="hero-divider">
+      <div class="hero-divider-line"></div>
+      <div class="hero-divider-diamond"></div>
+      <div class="hero-divider-line"></div>
+    </div>
+    <p class="hero-desc">Recettes transmises de génération en génération, préparées chaque matin avec passion et amour.</p>
+    <a href="#douceurs" class="btn-primary">Découvrir nos spécialités</a>
+  </div>
+</section>
+
+<!-- DOUCEURS -->
+<section id="douceurs">
+  <div class="section-header">
+    <p class="section-eyebrow">Tradition & Savoir-faire</p>
+    <h2 class="section-title">Nos <em>Douceurs</em></h2>
+    <div class="divider-ornament">
+      <span class="d-line"></span>
+      <span class="d-dot"></span>
+      <span class="d-circle"></span>
+      <span class="d-dot"></span>
+      <span class="d-line"></span>
+    </div>
+  </div>
+
+  <div class="category-filters">
+    <button class="filter-btn active" onclick="filterProducts('all', this)">Tout</button>
+    <button class="filter-btn" onclick="filterProducts('dessert', this)">Desserts</button>
+    <button class="filter-btn" onclick="filterProducts('pite', this)">Pites</button>
+  </div>
+
+  <div class="products-grid" id="productsGrid">
+    <!-- Cards insérées dynamiquement par script.js -->
+  </div>
+</section>
+
+<!-- ABOUT STRIP -->
+<div class="about-strip" id="about">
+  <h2>"Çdo kafshatë mbart një histori" — Chaque bouchée porte une histoire</h2>
+  <p>Depuis trois générations, notre famille prépare ces recettes albanaises avec les mêmes ingrédients, les mêmes gestes, le même amour. Commandé le matin, livré frais chez vous.</p>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <span class="footer-logo">Shtëpia e Ëmbëlsirave</span>
+  <p>Fabriqué artisanalement · Livraison locale · Commandes sur mesure</p>
+  <p style="margin-top:0.5rem; opacity:0.4; font-size:0.75rem;">© 2025 Shtëpia e Ëmbëlsirave</p>
+</footer>
+
+<!-- CART OVERLAY -->
+<div class="cart-overlay" id="cartOverlay" onclick="closeCart()"></div>
+
+<!-- CART SIDEBAR -->
+<div class="cart-sidebar" id="cartSidebar">
+  <div class="cart-header">
+    <h3>Votre Panier</h3>
+    <button class="close-cart" onclick="closeCart()">✕</button>
+  </div>
+  <div class="cart-items" id="cartItems"></div>
+  <div class="cart-footer">
+    <div class="cart-total">
+      <span class="cart-total-label">Total</span>
+      <span class="cart-total-price" id="cartTotal">0,00 €</span>
+    </div>
+    <button class="checkout-btn" onclick="checkout()">Commander — Finaliser</button>
+  </div>
+</div>
+
+<!-- TOAST -->
+<div class="toast" id="toast"></div>
+
+<script src="script.js"></script>
+</body>
+</html>
